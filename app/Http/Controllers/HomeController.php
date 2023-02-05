@@ -13,7 +13,11 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+    }
+
+    public function userHome()
+    {
+        return view('home',["msg"=>"Hello! I am user"]);
     }
 
     /**
@@ -21,8 +25,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function editorHome()
     {
-        return view('home');
+        return view('home',["msg"=>"Hello! I am editor"]);
+    }
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function adminHome()
+    {
+        return view('home',["msg"=>"Hello! I am admin"]);
     }
 }
